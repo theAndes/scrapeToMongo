@@ -1,7 +1,6 @@
 let db = require("../models");
 
 module.exports = function(app, axios, cheerio) {
-  // Making a request via axios for reddit's "webdev" board. We are sure to use old.reddit due to changes in HTML structure for the new reddit. The page's Response is passed as our promise argument.
   axios
     .get(
       "https://communityimpact.com/news/austin/round-rock-pflugerville-hutto/"
