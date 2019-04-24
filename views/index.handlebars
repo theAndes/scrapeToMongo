@@ -3,6 +3,16 @@
     Inventore, ducimus! Quidem nobis itaque exercitationem animi. Molestias, aspernatur autem ullam unde quasi atque.
     Voluptas unde eos debitis.</p>
 
+<div id="wrapper">
+    <h1 class="text-center">Article Feed</h1>
+    <div class="container">
+        {{#each article}}
+        <div id={{_id}}>{{title}}</div>
+        <a id="_id" href={{link}}>{{link}}</a>
+        {{/each}}
+    </div>
+</div>Ï
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

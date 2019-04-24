@@ -31,6 +31,7 @@ module.exports = function(app, axios, cheerio) {
           // In the currently selected element, look at its child elements (i.e., its a-tags),
           // then save the values for any "href" attributes that the child elements may have
           results.link = common.children().attr('href');
+
           // Create a new Article using the `result` object built from scraping
           db.Article.create(results)
             .then(function(dbArticle) {
@@ -41,13 +42,26 @@ module.exports = function(app, axios, cheerio) {
               // If an error occurred, log it
               console.log(err);
             });
-
-          console.log(results);
         });
       });
 
     // Send a message to the client
-    res.send("You've been scraped");
+    res.send("You've been scrapped");
+  });
+
+  // Route for getting all Articles from the db
+  app.get('/articles', function(req, res) {
+    // Grab every document in the Articles collection
+    db.Article.find({})
+      .sort('_id')
+      .then(function(dbArticle) {
+        //
+        // If we were able to successfully find Articles, send them back to the client
+        res.render('index', { article: dbArticle });
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
   });
 };
-console.log('DB :', db.Article);

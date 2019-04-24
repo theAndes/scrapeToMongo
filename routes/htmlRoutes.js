@@ -4,7 +4,6 @@ module.exports = function(app) {
   // Load index page
   app.get('/', function(req, res) {
     res.render('index', {
-      tittle: 'AndrewEsquivel || Dev',
       msg: 'Welcome! This is the Cheerio MongoDB Demo'
     });
   });
