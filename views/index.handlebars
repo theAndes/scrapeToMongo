@@ -1,18 +1,90 @@
-<blockquote> {{msg}} </blockquote>
-<p class="flow-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laudantium aliquam obcaecati!
-    Inventore, ducimus! Quidem nobis itaque exercitationem animi. Molestias, aspernatur autem ullam unde quasi atque.
-    Voluptas unde eos debitis.</p>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class=" brand-logo">a|G|e</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Saved Articles</a></li>
+            </ul>
 
-<div id="wrapper">
-    <h1 class="text-center">Article Feed</h1>
-    <div class="container">
-        {{#each article}}
-        <div id={{_id}}>{{title}}</div>
-        <a id="_id" href={{link}}>{{link}}</a>
-        {{/each}}
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Saved Articles</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Community Impact Newspaper </h1>
+            <h3 class="header center deep-orange-text darken-2"> Round Rock | Pflugerville | Hutto</h3>
+            <div class="row center">
+                <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+            </div>
+            <div class="row center">
+                <a href="/articles" class="btn-large waves-effect waves-light orange">Get the
+                    feed</a>
+            </div>
+            <br><br>
+
+        </div>
     </div>
-</div>Ï
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <div class="container">
+        <div class="section" id="vh-empty">
+
+            <!--   Icon Section   -->
+            <div class="row">
+
+                {{#each article}}
+                <div class="col s12 10">
+                    <div class="icon-block center">
+                        <h2 class="light-blue-text"><i class="material-icons">flash_on</i></h2>
+                        <h5>{{title}}</h5>
+
+                        <a href="{{link}}" target="_blank">Read the full article --></a>
+                    </div>
+                </div> {{/each}} </div>
+        </div> <br><br>
+    </div>
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Web Scraping</h5>
+                    <p class="grey-text text-lighten-4">Web scraping, web harvesting, or web data
+                        extraction is data
+                        scraping used for extracting data from websites. Internet Archive collects and
+                        distributes
+                        significant number of publicly available webpages without it is considered to be
+                        copyright
+                        violation.
+
+                    </p>
+
+
+                </div>
+
+                <div class="col l6 s12">
+                    <h5 class="white-text">Connecting</h5>
+                    <p>MongoDB stores data in flexible, JSON-like documents, meaning fields can vary
+                        from document to
+                        document and data structure can be changed over time.
+
+                        Ad hoc queries, indexing, and real time aggregation provide powerful ways to
+                        access and analyze
+                        your data.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
