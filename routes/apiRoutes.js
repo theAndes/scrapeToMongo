@@ -1,14 +1,8 @@
 let db = require('../models');
 
 module.exports = function(app, axios, cheerio) {
-  app.get('/scrape', function(req, res) {
-    db.Article.deleteMany({})
-      .then(function(dbArticle) {
-        res.json(db.article);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
+  app.get('/', function(req, res) {
+    db.Article.deleteMany({}).then(function(dbArticle) {});
     axios
       .get(
         'https://communityimpact.com/news/austin/round-rock-pflugerville-hutto/'
@@ -53,7 +47,7 @@ module.exports = function(app, axios, cheerio) {
       });
 
     // Send a message to the client
-    res.send("You've been scrapped");
+    res.render('index');
   });
 
   // Route for getting all Articles from the db
