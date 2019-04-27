@@ -2,6 +2,13 @@ let db = require('../models');
 
 module.exports = function(app, axios, cheerio) {
   app.get('/scrape', function(req, res) {
+    db.Article.deleteMany({})
+      .then(function(dbArticle) {
+        res.json(db.article);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
     axios
       .get(
         'https://communityimpact.com/news/austin/round-rock-pflugerville-hutto/'

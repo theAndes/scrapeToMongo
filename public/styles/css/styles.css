@@ -17,6 +17,9 @@ body {
 .icon-block .material-icons {
   font-size: inherit;
 }
+.save-me {
+  cursor: alias;
+}
 
 #notfound {
   position: relative;
