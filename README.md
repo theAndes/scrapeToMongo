@@ -1,5 +1,5 @@
 # scrapeToMongo
-2. Site uses these npm packages:
+1. Site uses these npm packages:
 
    1. express
 
